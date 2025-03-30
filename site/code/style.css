@@ -1,0 +1,126 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0%;
+  padding: 0%;
+  background-color: #060614
+}
+
+.cabecalho {
+
+  padding-top: 30px;
+  width: 100;
+  background-color: #131340;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  height: 30px;
+
+}
+
+#logo {
+
+  padding-left: 30px;
+  height: 60px;
+  position: relative;
+  top: -17px;
+
+}
+
+#NomeSite {
+
+  display: inline;
+  position: relative;
+  top: -30px;
+  left: 10px;
+  color: #9400D3;
+}
+
+.li {
+
+  display: inline;
+  padding-left: 5px;
+
+}
+
+.align {
+
+  display: inline;
+
+}
+
+.li a {
+
+  text-decoration: none;
+  color: #c0c0c0
+}
+
+a:hover {
+
+  color: white;
+
+}
+
+.menu {
+
+  display: inline;
+  position: relative;
+  top: -32px;
+
+}
+
+#form {
+
+  padding-left: 170px;
+  margin-left: 0px;
+
+}
+
+#pesquisar {
+
+  width: 400px;
+
+}
+
+.footer {
+
+  padding: 10px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #131340;
+  
+}
+
+.filme {
+
+  display: inline;
+  padding-left: 120px;
+}
+
+.filmes {
+
+  margin-top: 20px;
+
+}
+
+.filtros {
+
+  margin-top: 20px;
+  margin-left: 50px;
+
+}
+
+#icone {
+
+  color: #c0c0c0
+}
+
+.filtros option{
+
+  background-color: transparent;
+  
+}
