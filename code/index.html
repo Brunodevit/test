@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>CineTrack</title>
+    <link rel="stylesheet" href="teste.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="CineTrack">
+    <meta property="og:description"
+        content="Conheça o site que irá te auxiliar com uma gama surpreendente de recursos para que você possa facilmente navegar por filmes e séries com base em categorias,                    avaliações e muito mais!">
+    <meta property="og:image" content="ogimage.jpg">
+    <meta property=" og:url" content="https://www.cinetrack.com">
+    <meta property="og:type" content="website">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+        $(function ()
+        { 
+            var cor_padrao = $('#tloubutjs').css('background-color');
+            $('#buttonmudacor').mouseout(
+                function(){     
+                    
+                    $('#tloubutjs').css('background-color', `${cor_padrao}`);
+                })
+
+            $('#buttonmudacor').click(
+                function(){ 
+                    let cor = $('#corFundoButton').val();
+                    $('#tloubutjs').css('background-color', `${cor}`)
+                })
+           
+                
+            }
+            
+            
+        );
+
+    </script>
+    
+</head>
+
+<body class="fundo" id="meubodyjs">
+    <header class="cabdesk d-flex align-items-center d-none d-lg-block">
+        <div class="d-flex align-items-center p-2 fadecab">
+            <a href="index.html"><img style="width: 70px;" src="logo.png"></a>
+            <a class="NomeSite" href="index.html">CineTrack</a>
+            <ul class="listheader d-flex align-items-center">
+                
+                <li>Favoritos</li>
+                <li>Curtidos</li>
+                <li>Assistir mais tarde</li>
+            </ul>
+            <i class="fa-solid fa-circle-user fa-2x user"></i>
+        </div>
+    </header>
+    <div class="fundotlou d-none d-lg-block">
+        <button id="tloubutjs" class="tloubut">More</button>
+    </div>
+    <div class="d-flex justify-content-center">
+        <input type="text" id="corFundoButton">
+        <button id="buttonmudacor" style="width: 100px; height: 50px;">Mude a cor</button>
+    </div>
+
+    <header class="container cab d-lg-none ">
+        <section class="container">
+            <!-- <article class="menunav">
+                <i id="iconenav" class="fas fa-bars"></i>
+            </article> -->
+            <article class="d-lg-none container d-flex justify-content-center menucel">
+
+                <i class="fas fa-bars mt-3 text-light iconecel"></i>
+
+            </article>
+            <!-- <article class="logo">
+
+                <img id="logo" src="logo.png" height="100px">
+                <h1 id="NomeSite">CineTrack</h1>
+
+            </article> -->
+            <article class="d-flex flex-wrap justify-content-center align-items-center minhalogo ">
+
+                <img class="imglogo" src="logo.png">
+                <h1 class="NomeSite">CineTrack</h1>
+
+            </article>
+            <!-- <article class="cab">
+                <nav class="menu">
+
+                    <ul class="list">
+                        <li class="li"><a href="index.html" target="_self">Home</a></li>
+                        <li class="li"><a href="lancamentos.html" target="_self">Lançamentos</a></li>
+                        <li class="li"><a href="favoritos.html" target="_self">Favoritos</a></li>
+                        <li class="li"><a href="curtidos.html" target="_self">Curtidos</a></li>
+                        <li class="li"><a href="later.html" target="_self">Assistir mais tarde</a></li>
+                    </ul>
+                </nav>
+
+            </article> -->
+            <article class="d-none  d-lg-block">
+
+                <nav class="">
+
+                    <ul class="d-flex justify-content-center list-unstyled">
+                        <li class=""><a class="text-decoration-none mx-4  hovermenu" href="index.html"
+                                target="_self">Home</a></li>
+                        <li class=""><a class="text-decoration-none mx-4  hovermenu" href="lancamentos.html"
+                                target="_self">Lançamentos</a></li>
+                        <li class=""><a class="text-decoration-none mx-4  hovermenu" href="favoritos.html"
+                                target="_self">Favoritos</a></li>
+                        <li class=""><a class="text-decoration-none mx-4  hovermenu" href="curtidos.html"
+                                target="_self">Curtidos</a></li>
+                        <li class=""><a class="text-decoration-none mx-4  hovermenu" href="later.html"
+                                target="_self">Assistir mais tarde</a></li>
+                    </ul>
+                </nav>
+
+
+            </article>
+        </section>
+
+    </header>
+    <main class="principal" id="meumainjs">
+
+        <!-- <section class="info">
+            <h1 class="sobre">Sobre</h1>
+            <p class="sobretext">Cinetrack é o site ideal para rastreamento de filmes e séries com base em suas preferências e gostos. A plataforma é totalmente intuitiva, com um layout claro e padronizado. Aqui, você encontrará o filme ou a série perfeita para você, com a ajuda de filtros que podem ser ajustados conforme suas preferências e recomendações personalizadas com base em suas pesquisas e interações na plataforma.  
+
+                Além disso, o site possui páginas secundárias onde você pode acessar seus filmes e séries marcados como "gostei", "assistir mais tarde" e "curtidos".  
+
+                E aí, gostou? Agora, sinta-se à vontade para explorar todo o nosso conteúdo. Vá de Cinetrack!
+            </p>
+        </section> -->
+        <section class="container">
+
+            <h1 class="sobre">Sobre</h1>
+            
+            <p class="text-dark-emphasis">Cinetrack é o site ideal para rastreamento de filmes e séries com base em suas
+                preferências e gostos. A plataforma é totalmente intuitiva, com um layout claro e padronizado. Aqui,
+                você encontrará o filme ou a série perfeita para você, com a ajuda de filtros que podem ser ajustados
+                conforme suas preferências e recomendações personalizadas com base em suas pesquisas e interações na
+                plataforma.
+
+                Além disso, o site possui páginas secundárias onde você pode acessar seus filmes e séries marcados como
+                "gostei", "assistir mais tarde" e "curtidos".
+
+                E aí, gostou? Agora, sinta-se à vontade para explorar todo o nosso conteúdo. Vá de Cinetrack!
+            </p>
+
+        </section>
+
+        <section class="fundocat">
+
+
+        </section>
+        <section class="conteudo">
+
+            <div class="ranking1">
+                <i id="rank" class="fa-solid fa-award fa-5x"></i>
+            </div>
+            <div>
+                <h1 class="textrank"></h1>
+            </div>
+
+
+        
+
+            <div class="titletop1">
+                <h1>TOP 1</h1>
+            </div>
+            <div class="imgtop1">
+                <img id="image1" src="tlou.jpg">
+            </div>
+
+        </section>
+        <div class="txtfilme">
+
+            <h1 class="textfilmes">Filmes</h1>
+            
+        </div>
+
+
+        <section class="filtering d-lg-none flex-wrap ">
+            <select class="selecionar" id="selecionar1" mx-1">
+                <option disabled selected class="opcao">Categoria</option>
+                <option class="opcao">Ação</option>
+                <option class="opcao">Aventura</option>
+                <option class="opcao">Comédia</option>
+                <option class="opcao">Romance</option>
+                <option class="opcao">Drama</option>
+                <option class="opcao">Ficção científica</option>
+            </select>
+            <select class="selecionar" id="selecionar2" mx-1">
+                <option disabled selected class="opcao">Faixa etária</option>
+                <option class="opcao">Até 10 anos</option>
+                <option class="opcao">Até 16 anos</option>
+                <option class="opcao">Até 18 anos</option>
+                <option class="opcao">Maior de 18 anos</option>
+            </select>
+
+
+
+        </section>
+
+        
+        <section class="filmes">
+            <article class="filme filme1">
+                <img class="imgfilm" src="https://picsum.photos/200/300">
+            </article>
+            <article class="filme filme2">
+                <img class="imgfilm" src="https://picsum.photos/200/300">
+            </article>
+            <article class="filme filme3">
+                <img class="imgfilm" src="https://picsum.photos/200/300">
+            </article>
+            <article class="filme filme4">
+                <img class="imgfilm" src="https://picsum.photos/200/300">
+            </article>
+        </section>
+
+        <div class="txtfilme">
+
+            <h1 class="textfilmes">Séries</h1>
+
+        </div>
+
+        <section class="filtering d-lg-none flex-wrap ">
+            <select class="selecionar" id="selecionar1" mx-1">
+                <option disabled selected class="opcao">Categoria</option>
+                <option class="opcao">Ação</option>
+                <option class="opcao">Aventura</option>
+                <option class="opcao">Comédia</option>
+                <option class="opcao">Romance</option>
+                <option class="opcao">Drama</option>
+                <option class="opcao">Ficção científica</option>
+            </select>
+            <select class="selecionar" id="selecionar2" mx-1">
+                <option disabled selected class="opcao">Faixa etária</option>
+                <option class="opcao">Até 10 anos</option>
+                <option class="opcao">Até 16 anos</option>
+                <option class="opcao">Até 18 anos</option>
+                <option class="opcao">Maior de 18 anos</option>
+            </select>
+ 
+
+
+        </section>
+        <section>
+            <div class="d-none d-lg-flex" id="filtrosdesktop">
+                <i class="fa-solid fa-filter fa-2x mx-5 mt-5" >Filtros</i></span>
+            </div>
+            <div class="d-none d-lg-flex mt-4 ms-5">
+                <select class="selecionardesk">
+                    <option class="opcaodesk" disabled selected>Categoria</option>
+                    <option>Ação</option>
+                    <option>Aventura</option>
+                    <option>Comédia</option>
+                    <option>Romance</option>
+                    <option>Drama</option>
+                    <option>Ficção científica</option>
+                </select>
+                <select class="selecionardesk">
+                    <option class="opcaodesk" disabled selected>Faixa etária</option>
+                    <option>Até 10 anos</option>
+                    <option>Até 16 anos</option>
+                    <option>Até 18 anos</option>
+                    <option>Maior de 18 anos</option>
+                </select>
+                <i class="fa-solid fa-magnifying-glass iconsearch"></i>
+                <input type="text" class="pesquisardesk" placeholder="Digite uma série ou filme">
+            </div>
+        </section>
+            
+                
+            
+
+        <section class="filmes ">
+            <article class="filme filme1">
+                <img class="imgfilm" src="https://picsum.photos/200/300">
+            </article>
+            <article class="filme filme2">
+                <img class="imgfilm" src="https://picsum.photos/200/300">
+            </article>
+            <article class="filme filme3">
+                <img class="imgfilm" src="https://picsum.photos/200/300">
+            </article>
+            <article class="filme filme4">
+                <img class="imgfilm" src="https://picsum.photos/200/300">
+            </article>
+        </section>
+        
+
+        <section class="d-none d-lg-block  container-fluid">
+            <article class="row m-5">
+
+                <img class="col-sm-6 col-md-3 my-4 col-lg-2 col-xs-6 rounded-5 mt-5"
+                     src="https://picsum.photos/200/300">
+
+                <img class="col-sm-6 col-md-3 my-4 col-lg-2 col-xs-6  rounded-5 mt-5"
+                    src="https://picsum.photos/200/300">
+
+                <img class="col-sm-6 col-md-3 my-4 col-lg-2 col-xs-6  rounded-5 mt-5"
+                    src="https://picsum.photos/200/300">
+
+                <img class="col-sm-6 col-md-3 my-4 col-lg-2 col-xs-6  rounded-5 mt-5"
+                    src="https://picsum.photos/200/300">
+
+                <img class="col-sm-6 col-md-3 my-4 col-lg-2 col-xs-6  rounded-5 mt-5"
+                    src="https://picsum.photos/200/300">
+
+                <img class="col-sm-6 col-md-3 my-4 col-lg-2 col-xs-6  rounded-5 mt-5"
+                    src="https://picsum.photos/200/300">
+
+                <img class="col-sm-6 col-md-3 my-4 col-lg-2 col-xs-6  rounded-5 mt-5"
+                    src="https://picsum.photos/200/300">
+
+                <img class="col-sm-6 col-md-3 my-4 col-lg-2 col-xs-6  rounded-5 mt-5"
+                    src="https://picsum.photos/200/300">
+
+                <img class="col-sm-6 col-md-3 my-4 col-lg-2 col-xs-6  rounded-5 mt-5"
+                    src="https://picsum.photos/200/300">
+
+                <img class="col-sm-6 col-md-3 my-4 col-lg-2 col-xs-6  rounded-5 mt-5"
+                    src="https://picsum.photos/200/300">
+
+                <img class="col-sm-6 col-md-3 my-4 col-lg-2 col-xs-6  rounded-5 mt-5"
+                    src="https://picsum.photos/200/300">
+
+                <img class="col-sm-6 col-md-3 my-4 col-lg-2 col-xs-6  rounded-5 mt-5"
+                    src="https://picsum.photos/200/300">
+
+            </article>
+        </section>
+        <!-- <section class="container mt-3 mb-">
+            <article class="image-scroll">
+
+                <img  src="https://picsum.photos/200/300">
+
+                <img  src="https://picsum.photos/200/300">
+
+                <img  src="https://picsum.photos/200/300">
+
+                <img  src="https://picsum.photos/200/300">
+
+                <img  src="https://picsum.photos/200/300">
+
+                <img  src="https://picsum.photos/200/300">
+
+                <img  src="https://picsum.photos/200/300">
+
+                <img  src="https://picsum.photos/200/300">
+
+                <img  src="https://picsum.photos/200/300">
+
+                <img  src="https://picsum.photos/200/300">
+
+                <img  src="https://picsum.photos/200/300">
+
+            </article>
+
+
+        </section> -->
+    </main>
+
+
+    <footer class="footer d-flex justify-content-center">
+        <p class="linkedin"><i class="fa-brands fa-linkedin"></i> Desenvolvido por <a
+                href="http://www.linkedin.com/in/bruno-marinho-1052b62aa" target="_blank"> Bruno Marinho</a></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

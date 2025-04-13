@@ -1,0 +1,876 @@
+html {
+
+  height: 100%;
+
+
+}
+
+.fundotlou {
+
+  background-image: url(the-last-of-us-serie-hbo-podera-ter-ate-tres-temporadas.jpg);
+  height: 700px;
+  width: 100%;
+  background-size: cover;
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  
+}
+
+.listheader {
+
+  list-style: none;
+  gap: 30px;
+  margin-top: 13px;
+  color: white;
+
+}
+
+
+
+.tloubut {
+
+  position: absolute;
+  top: 105%;
+  left: 50%;
+  width: 100px;
+  height: 30px;
+  background-color: #9400D3;
+  border: none;
+  border-radius: 9999px;
+  color: white;
+  font-weight: 700;
+  transform: translate(-50%);
+  transition: background-color 0.3s ease;
+  
+
+}
+
+.pesquisardesk{
+
+  width: 300px;
+  border: none;
+  border-radius: 9999px;
+  padding-left: 40px;
+  
+  
+}
+
+.iconsearch{
+
+  position: relative;
+  left: 30px;
+  top: 6px;
+  
+}
+
+.tloubut:hover{
+
+  background-color: #440061;
+
+  
+}
+
+
+body {
+
+  margin: 0%;
+  width: 100%;
+  padding: 0%;
+
+}
+
+
+.fundo {
+
+  background-color: #050c16;
+
+}
+
+@font-face {
+
+  font-family: 'MinhaFonte';
+  src: url('fonts/Styleguide-Script.woff2') format('woff2');
+
+
+}
+
+
+
+.cabecalho {
+
+
+
+  max-width: 100%;
+  margin: 0 auto;
+
+
+}
+
+
+
+.li a {
+
+  text-decoration: none;
+
+  color: #c0c0c0
+}
+
+.li {
+
+  padding-right: 40px;
+
+}
+
+
+.NomeSite {
+
+  background: linear-gradient(135deg, #9400D3, #57007d, #20002d);
+  -webkit-background-clip: text;
+  font-size: 30px;
+  color: transparent;
+  
+
+
+}
+
+.user{
+
+  position: absolute;
+  right: 50px;
+  
+}
+
+
+.logo {
+
+  padding-right: 65px;
+  margin-left: 35px;
+}
+
+
+.pesquisar {
+
+  width: 300px;
+  font-size: 16px;
+  padding: 10px 10px 10px 30px;
+  color: #c0c0c0;
+  background-color: #10161d;
+  border-color: transparent;
+  border-radius: 5%;
+
+}
+
+
+.top1desktop {
+
+  background-image: url(Creditos_-ALILEDARAONAWALE.webp);
+  width: 100%;
+  max-width: 100%;
+  height: 800px;
+  background-size: cover;
+  filter: brightness(50%);
+  background-position: center;
+  margin: 0;
+}
+
+.top1desktop:hover {
+  filter: brightness(50%);
+}
+
+.botao {
+
+  cursor: pointer;
+  opacity: 0%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  border-radius: 50%;
+  height: 150px;
+  border-color: transparent;
+  background-color: #9400D3;
+  transform: translate(-50%, -50%);
+
+}
+
+.oscar {
+
+  font-family: 'MinhaFonte';
+  color: antiquewhite;
+  font-size: 100px;
+  line-height: 1.2;
+  position: absolute;
+  top: 15%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  transform: rotate(-20deg);
+
+
+
+
+}
+
+.play {
+
+  width: 100px;
+
+}
+
+.botao a {
+
+  color: antiquewhite;
+
+}
+
+.top1desktop:hover .botao {
+
+  opacity: 1;
+  filter: brightness(500%);
+  position: absolute;
+
+}
+
+.top1desktop:hover .oscar {
+
+  z-index: -1;
+
+}
+
+
+
+#icone {
+
+  background: linear-gradient(45deg, #9400D3, #57007d, #20002d);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.filtros {
+
+  gap: 30px;
+  margin: 50px;
+
+}
+
+.imglogo {
+
+  width: 150px;
+  height: auto;
+
+}
+
+.hovermenu:hover {
+
+  color: #c0c0c0
+}
+
+.hovermenu {
+
+  color: wheat;
+
+}
+
+.selecionar {
+
+  background-color: transparent;
+  border: none;
+  color: #c0c0c0;
+
+
+}
+
+
+
+
+.sobre {
+
+  background: linear-gradient(135deg, #9400D3, #57007d, #20002d);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 40px;
+  margin-top: 50px;
+
+}
+
+.sobretext {
+
+  color: #c0c0c0;
+  opacity: 50%;
+
+}
+
+.info {
+
+  margin: 30px;
+
+}
+
+.form {
+
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+footer {
+  background-color: black;
+  padding: 30px;
+
+}
+
+.filmes {
+
+  display: none;
+
+}
+
+.txtfilme {
+
+  display: none;
+
+}
+
+.fundocat{
+
+
+
+  width: 100%;
+  height: 800px;
+  mask-image: linear-gradient(to bottom, transparent 10%, black 90%, transparent 100%);
+  filter: brightness(60%);
+
+}
+
+.conteudo{
+
+  position: relative;
+  margin-top: -700px;
+  margin-bottom: 200px;
+
+}
+
+@media screen and (max-width: 575px) {
+  .filmes {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+  }
+
+  .filtros {
+
+    display: block;
+
+  }
+
+  .pesquisar {
+
+    display: none;
+
+  }
+
+  .txtfilme {
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 100px;
+    background: linear-gradient(135deg, #9400D3, #57007d, #20002d);
+    -webkit-background-clip: text;
+    color: transparent;
+
+
+  }
+
+
+  .iconecel {
+
+    margin-left: -48px;
+
+  }
+
+  .menucel {
+
+
+    position: fixed;
+    top: 10px;
+
+  }
+
+  .minhalogo {
+
+    margin-top: 40px;
+
+  }
+
+  section.filtering {
+
+    
+    margin-top: 5px;
+    margin-bottom: 50px;
+    margin-left: 6px;
+
+  }
+
+  #selecionar1 {
+
+    width: 90px;
+    margin-left: -7px;
+
+  }
+
+  #selecionar2 {
+
+    width: 110px;
+
+  }
+
+  #selecionar3 {
+
+    width: 70px;
+
+  }
+
+  .imglogo {
+
+    width: 100px;
+
+  }
+
+  .selecionar {
+
+    margin-right: 10px;
+
+  }
+
+  .NomeSite {
+
+    font-size: 35px;
+    margin-left: -10px;
+    margin-top: 15px;
+
+  }
+
+  .filtering {
+
+    margin-left: -50px;
+
+  }
+
+  select.selecionar {
+
+    font-size: 15px;
+
+
+  }
+
+
+  .section.filmes {
+
+    margin: 20px;
+    max-width: 100%;
+
+  }
+
+  .imgfilm {
+
+    width: 100%;
+    max-width: 100%;
+    border-radius: 5%;
+
+  }
+
+  .principal {
+
+    margin: 20px;
+
+  }
+
+}
+
+
+@media screen and (min-width:576px) and (max-width: 767px) {
+
+
+  .filmes {
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+
+    }
+
+    .filtros {
+
+      display: block;
+
+    }
+
+    .pesquisar {
+
+      display: none;
+
+    }
+
+    .txtfilme {
+
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      margin-top: 100px;
+      background: linear-gradient(135deg, #9400D3, #57007d, #20002d);
+      -webkit-background-clip: text;
+      color: transparent;
+
+
+    }
+
+
+    .iconecel {
+
+      margin-left: -48px;
+
+    }
+
+    .menucel {
+
+
+      position: fixed;
+      top: 10px;
+
+    }
+
+    .minhalogo {
+
+      margin-top: 40px;
+
+    }
+
+    section.filtering {
+
+
+      margin-top: 5px;
+      margin-bottom: 50px;
+      margin-left: 6px;
+
+    }
+
+    #selecionar1 {
+
+      width: 90px;
+      margin-left: -7px;
+
+    }
+
+    #selecionar2 {
+
+      width: 110px;
+
+    }
+
+    #selecionar3 {
+
+      width: 70px;
+
+    }
+
+    .imglogo {
+
+      width: 100px;
+
+    }
+
+    .selecionar {
+
+      margin-right: 10px;
+
+    }
+
+    .NomeSite {
+
+      font-size: 35px;
+      margin-left: -10px;
+      margin-top: 15px;
+
+    }
+
+    .filtering {
+
+      margin-left: -50px;
+
+    }
+
+    select.selecionar {
+
+      font-size: 15px;
+
+
+    }
+
+
+    .section.filmes {
+
+      margin: 20px;
+      max-width: 100%;
+
+    }
+
+    .imgfilm {
+
+      width: 100%;
+      max-width: 100%;
+      border-radius: 5%;
+
+    }
+
+    .principal {
+
+      margin: 20px;
+
+    }
+
+  }
+
+
+@media screen and (min-width:768px) and (max-width: 991px)
+{
+  .filmes {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+  }
+
+  .filtros {
+
+    display: block;
+
+  }
+
+  .pesquisar {
+
+    display: none;
+
+  }
+
+  .txtfilme {
+
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top: 100px;
+    background: linear-gradient(135deg, #9400D3, #57007d, #20002d);
+    -webkit-background-clip: text;
+    color: transparent;
+
+
+  }
+
+
+  .iconecel {
+
+    margin-left: -48px;
+
+  }
+
+  .menucel {
+
+
+    position: fixed;
+    top: 10px;
+
+  }
+
+  .minhalogo {
+
+    margin-top: 40px;
+
+  }
+
+  section.filtering {
+
+
+    margin-top: 5px;
+    margin-bottom: 50px;
+    margin-left: 6px;
+
+  }
+
+  #selecionar1 {
+
+    width: 90px;
+    margin-left: -7px;
+
+  }
+
+  #selecionar2 {
+
+    width: 110px;
+
+  }
+
+  #selecionar3 {
+
+    width: 70px;
+
+  }
+
+  .imglogo {
+
+    width: 100px;
+
+  }
+
+  .selecionar {
+
+    margin-right: 10px;
+
+  }
+
+  .NomeSite {
+
+    font-size: 35px;
+    margin-left: -10px;
+    margin-top: 15px;
+
+  }
+
+  .filtering {
+
+    margin-left: -50px;
+
+  }
+
+  select.selecionar {
+
+    font-size: 15px;
+
+
+  }
+
+
+  .section.filmes {
+
+    margin: 20px;
+    max-width: 100%;
+
+  }
+
+  .imgfilm {
+
+    width: 100%;
+    max-width: 100%;
+    border-radius: 5%;
+
+  }
+
+  .principal {
+
+    margin: 20px;
+
+  }
+}
+
+#rank {
+
+  width: 100px;
+  height: 100px;
+  margin-left: 35px;
+
+
+}
+
+.ranking1 {
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+  background: linear-gradient(45deg, #d4af37, #ffd700, #b8860b, #f4a300);
+  -webkit-background-clip: text;
+  margin-top: 50px;
+}
+
+.textrank {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+  background: linear-gradient(45deg, #d4af37, #ffd700, #b8860b, #f4a300);
+  -webkit-background-clip: text;
+
+
+
+}
+
+.ouro {
+
+  color: transparent;
+  background: linear-gradient(45deg, #d4af37, #ffd700, #b8860b, #f4a300);
+  -webkit-background-clip: text;
+
+}
+
+.divtop1 {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.titletop1 {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: transparent;
+  background: linear-gradient(45deg, #d4af37, #ffd700, #b8860b, #f4a300);
+  -webkit-background-clip: text;
+
+}
+
+#image1 {
+
+  width: 200px;
+  height: 350px;
+  border-radius: 5%;
+}
+
+.imgtop1 {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+#filtrosdesktop {
+
+  background: linear-gradient(135deg, #9400D3, #57007d, #20002d);
+  -webkit-background-clip: text;
+  color: transparent;
+
+}
+
+.selecionardesk {
+
+  background-color: transparent;
+  border: none;
+  color: #c0c0c0;
+
+}
+
+.cabdesk{
+
+  
+  width: 100%;
+  height: auto;
+  
+}
+
