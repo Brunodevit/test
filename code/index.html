@@ -10,366 +10,388 @@
     <meta property="og:title" content="CineTrack">
     <meta property="og:description"
         content="Conheça o site que irá te auxiliar com uma gama surpreendente de recursos para que você possa facilmente navegar por filmes e séries com base em categorias,                    avaliações e muito mais!">
-    <meta property="og:image" content="ogimage.jpg">
+    <meta property="og:image" content="imgs/ogimage.jpg">
     <meta property=" og:url" content="https://www.cinetrack.com">
     <meta property="og:type" content="website">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="jquery-3.7.1.js"></script>
-    <script>
-        $(function ()
-        { 
-            var cor_padrao = $('#tloubutjs').css('background-color');
-            $('#buttonmudacor').mouseout(
-                function(){     
-                    
-                    $('#tloubutjs').css('background-color', `${cor_padrao}`);
-                })
-
-            $('#buttonmudacor').click(
-                function(){ 
-                    let cor = $('#corFundoButton').val();
-                    $('#tloubutjs').css('background-color', `${cor}`)
-                })
-           
-                
-            }
-            
-            
-        );
-
-    </script>
-    
+    <script src="script.js"></script>
 </head>
 
-<body class="fundo" id="meubodyjs">
-    <header class="cabdesk d-flex align-items-center d-none d-lg-block">
-        <div class="d-flex align-items-center p-2 fadecab">
-            <a href="index.html"><img style="width: 70px;" src="logo.png"></a>
-            <a class="NomeSite" href="index.html">CineTrack</a>
-            <ul class="listheader d-flex align-items-center">
-                
-                <li>Favoritos</li>
-                <li>Curtidos</li>
-                <li>Assistir mais tarde</li>
-            </ul>
-            <i class="fa-solid fa-circle-user fa-2x user"></i>
+<body class="fundo">
+
+    <!-- Header xs-sm-->
+    <header class="d-lg-none d-flex align-items-center cabcel position-fixed justify-content-evenly">
+        <a href="index.html"><img class="imgcabdesk" src="imgs/novalogo.png"></a>
+        <div class="position-relative">
+            <input type="text" class="inputsearchcel" placeholder="Search">
+            <i class="fa-solid fa-magnifying-glass position-absolute iconsearchcel"></i>
         </div>
+        <i class="fa-solid fa-bars menucel"></i>
+        <i class="fa-solid fa-filter d-md-none"></i>
     </header>
-    <div class="fundotlou d-none d-lg-block">
-        <button id="tloubutjs" class="tloubut">More</button>
-    </div>
-    <div class="d-flex justify-content-center">
-        <input type="text" id="corFundoButton">
-        <button id="buttonmudacor" style="width: 100px; height: 50px;">Mude a cor</button>
-    </div>
 
-    <header class="container cab d-lg-none ">
-        <section class="container">
-            <!-- <article class="menunav">
-                <i id="iconenav" class="fas fa-bars"></i>
-            </article> -->
-            <article class="d-lg-none container d-flex justify-content-center menucel">
-
-                <i class="fas fa-bars mt-3 text-light iconecel"></i>
-
-            </article>
-            <!-- <article class="logo">
-
-                <img id="logo" src="logo.png" height="100px">
-                <h1 id="NomeSite">CineTrack</h1>
-
-            </article> -->
-            <article class="d-flex flex-wrap justify-content-center align-items-center minhalogo ">
-
-                <img class="imglogo" src="logo.png">
-                <h1 class="NomeSite">CineTrack</h1>
-
-            </article>
-            <!-- <article class="cab">
-                <nav class="menu">
-
-                    <ul class="list">
-                        <li class="li"><a href="index.html" target="_self">Home</a></li>
-                        <li class="li"><a href="lancamentos.html" target="_self">Lançamentos</a></li>
-                        <li class="li"><a href="favoritos.html" target="_self">Favoritos</a></li>
-                        <li class="li"><a href="curtidos.html" target="_self">Curtidos</a></li>
-                        <li class="li"><a href="later.html" target="_self">Assistir mais tarde</a></li>
-                    </ul>
-                </nav>
-
-            </article> -->
-            <article class="d-none  d-lg-block">
-
-                <nav class="">
-
-                    <ul class="d-flex justify-content-center list-unstyled">
-                        <li class=""><a class="text-decoration-none mx-4  hovermenu" href="index.html"
-                                target="_self">Home</a></li>
-                        <li class=""><a class="text-decoration-none mx-4  hovermenu" href="lancamentos.html"
-                                target="_self">Lançamentos</a></li>
-                        <li class=""><a class="text-decoration-none mx-4  hovermenu" href="favoritos.html"
-                                target="_self">Favoritos</a></li>
-                        <li class=""><a class="text-decoration-none mx-4  hovermenu" href="curtidos.html"
-                                target="_self">Curtidos</a></li>
-                        <li class=""><a class="text-decoration-none mx-4  hovermenu" href="later.html"
-                                target="_self">Assistir mais tarde</a></li>
-                    </ul>
-                </nav>
-
-
-            </article>
-        </section>
-
+    <!-- Header md+-->
+    <header class="d-none d-lg-flex align-items-center position-fixed  justify-content-evenly cabdesk">
+        <div class="d-flex align-items-center gap-4">
+            <a href="index.html"><img class="imgcabdesk" src="imgs/novalogo.png"></a>
+            <button class="buttoncabdesk"><i class="fa-solid fa-house"></i> Home</button>
+            <button class="buttoncabdesk"><i class="fa-solid fa-thumbs-up"></i> Curtidos</button>
+            <button class="buttoncabdesk"><i class="fa-solid fa-heart"></i> Favoritos</button>
+            <button class="buttoncabdesk"><i class="fa-solid fa-clock"></i> Later</button>
+        </div>
+        <div class="position-relative d-flex">
+            <input class="inputsearchdesk ms-3" type="text" placeholder="Search">
+            <i class="fa-solid fa-magnifying-glass iconsearchdesk position-absolute"></i>
+        </div>
+        <button class="btnenterdesk ms-4">Entrar</button>
+        <i class="fa-solid fa-user fa-2x ms-5"></i>
     </header>
-    <main class="principal" id="meumainjs">
 
-        <!-- <section class="info">
-            <h1 class="sobre">Sobre</h1>
-            <p class="sobretext">Cinetrack é o site ideal para rastreamento de filmes e séries com base em suas preferências e gostos. A plataforma é totalmente intuitiva, com um layout claro e padronizado. Aqui, você encontrará o filme ou a série perfeita para você, com a ajuda de filtros que podem ser ajustados conforme suas preferências e recomendações personalizadas com base em suas pesquisas e interações na plataforma.  
-
-                Além disso, o site possui páginas secundárias onde você pode acessar seus filmes e séries marcados como "gostei", "assistir mais tarde" e "curtidos".  
-
-                E aí, gostou? Agora, sinta-se à vontade para explorar todo o nosso conteúdo. Vá de Cinetrack!
-            </p>
-        </section> -->
-        <section class="container">
-
-            <h1 class="sobre">Sobre</h1>
-            
-            <p class="text-dark-emphasis">Cinetrack é o site ideal para rastreamento de filmes e séries com base em suas
-                preferências e gostos. A plataforma é totalmente intuitiva, com um layout claro e padronizado. Aqui,
-                você encontrará o filme ou a série perfeita para você, com a ajuda de filtros que podem ser ajustados
-                conforme suas preferências e recomendações personalizadas com base em suas pesquisas e interações na
-                plataforma.
-
-                Além disso, o site possui páginas secundárias onde você pode acessar seus filmes e séries marcados como
-                "gostei", "assistir mais tarde" e "curtidos".
-
-                E aí, gostou? Agora, sinta-se à vontade para explorar todo o nosso conteúdo. Vá de Cinetrack!
-            </p>
-
-        </section>
-
-        <section class="fundocat">
-
-
-        </section>
-        <section class="conteudo">
-
-            <div class="ranking1">
-                <i id="rank" class="fa-solid fa-award fa-5x"></i>
-            </div>
-            <div>
-                <h1 class="textrank"></h1>
-            </div>
-
-
+    
+    <div id="topo">
         
+    </div>
 
-            <div class="titletop1">
-                <h1>TOP 1</h1>
-            </div>
-            <div class="imgtop1">
-                <img id="image1" src="tlou.jpg">
-            </div>
+    <!-- <div style="padding-left: 100px; margin: 50px 0;">
 
-        </section>
-        <div class="txtfilme">
+        <h2 style="padding-left: 10px;border-left: 1px solid blue; color: gray">Em destaque</h2>
 
-            <h1 class="textfilmes">Filmes</h1>
-            
+    </div> -->
+
+    <!-- <div id="carouseldestaques" class="carousel slide mb-5">
+        <div class="carousel-inner" id="carouselhp">
+
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouseldestaques" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouseldestaques" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div> -->
+
+    <section id="meubg">
+        <div id="bgfade">
+            <div id="background">
+
+            </div>
+            <div id="bgcontent" style="width: 100%; position: relative; bottom: 400px; padding-left: 30px;">
+
+            </div>
+        </div>
+    </section>
+
+    <main class="principal">
+
+        <div style="margin-top: 100px;">
+
+            <p id="toptodaytext">TOP 3 TODAY</p>
+            <section id="toptoday">
+                <div class="container text-center">
+                    <div class="row" id="griddestaques">
 
 
-        <section class="filtering d-lg-none flex-wrap ">
-            <select class="selecionar" id="selecionar1" mx-1">
-                <option disabled selected class="opcao">Categoria</option>
-                <option class="opcao">Ação</option>
-                <option class="opcao">Aventura</option>
-                <option class="opcao">Comédia</option>
-                <option class="opcao">Romance</option>
-                <option class="opcao">Drama</option>
-                <option class="opcao">Ficção científica</option>
-            </select>
-            <select class="selecionar" id="selecionar2" mx-1">
-                <option disabled selected class="opcao">Faixa etária</option>
-                <option class="opcao">Até 10 anos</option>
-                <option class="opcao">Até 16 anos</option>
-                <option class="opcao">Até 18 anos</option>
-                <option class="opcao">Maior de 18 anos</option>
-            </select>
 
-
-
-        </section>
-
-        
-        <section class="filmes">
-            <article class="filme filme1">
-                <img class="imgfilm" src="https://picsum.photos/200/300">
-            </article>
-            <article class="filme filme2">
-                <img class="imgfilm" src="https://picsum.photos/200/300">
-            </article>
-            <article class="filme filme3">
-                <img class="imgfilm" src="https://picsum.photos/200/300">
-            </article>
-            <article class="filme filme4">
-                <img class="imgfilm" src="https://picsum.photos/200/300">
-            </article>
-        </section>
-
-        <div class="txtfilme">
-
-            <h1 class="textfilmes">Séries</h1>
+                    </div>
+                </div>
+            </section>
 
         </div>
 
-        <section class="filtering d-lg-none flex-wrap ">
-            <select class="selecionar" id="selecionar1" mx-1">
-                <option disabled selected class="opcao">Categoria</option>
-                <option class="opcao">Ação</option>
-                <option class="opcao">Aventura</option>
-                <option class="opcao">Comédia</option>
-                <option class="opcao">Romance</option>
-                <option class="opcao">Drama</option>
-                <option class="opcao">Ficção científica</option>
-            </select>
-            <select class="selecionar" id="selecionar2" mx-1">
-                <option disabled selected class="opcao">Faixa etária</option>
-                <option class="opcao">Até 10 anos</option>
-                <option class="opcao">Até 16 anos</option>
-                <option class="opcao">Até 18 anos</option>
-                <option class="opcao">Maior de 18 anos</option>
-            </select>
- 
-
-
-        </section>
-        <section>
-            <div class="d-none d-lg-flex" id="filtrosdesktop">
-                <i class="fa-solid fa-filter fa-2x mx-5 mt-5" >Filtros</i></span>
+        <h3 class=" titlefilter" style="margin-top: 150px">Filmes</h3>
+        <section class="my-5 d-none d-md-flex justify-content-center align-items-center">
+            <div class="d-flex p-3 gap-3 filtros">
+                <div class="d-flex rightborder">
+                    <i class="fa-solid fa-ban iconfilter"></i>
+                    <form>
+                        <select class="selectdisable">
+                            <option class="optiondisable" disabled selected>Idade</option>                        
+                        </select>
+                    </form>
+                </div>
+                <div class="d-flex rightborder">
+                    <i class="fa-solid fa-tv iconfilter"></i>
+                    <form>
+                        <select class="selectdisable">
+                            <option class="optiondisable" disabled selected>Categoria</option>                        
+                        </select>
+                    </form>
+                </div>
+                <div class="d-flex rightborder">
+                    <i class="fa-solid fa-calendar iconfilter"></i>
+                    <form>
+                        <select class="selectdisable">
+                            <option class="optiondisable" disabled selected>Ano</option>                        
+                        </select>
+                    </form>
+                </div>
+                <div class="d-flex rightborder">
+                    <i class="fa-solid fa-star iconfilter"></i>
+                    <form>
+                        <select class="selectdisable">
+                            <option class="optiondisable" disabled selected>Rating</option>                        
+                        </select>
+                    </form>
+                </div>
+                <div class="d-flex">
+                    <i class="fa-solid fa-video iconfilter"></i>
+                    <form>
+                        <select class="selectdisable">
+                            <option class="optiondisable" disabled selected>Streaming</option>                        
+                        </select>
+                    </form>
+                </div>
             </div>
-            <div class="d-none d-lg-flex mt-4 ms-5">
-                <select class="selecionardesk">
-                    <option class="opcaodesk" disabled selected>Categoria</option>
-                    <option>Ação</option>
-                    <option>Aventura</option>
-                    <option>Comédia</option>
-                    <option>Romance</option>
-                    <option>Drama</option>
-                    <option>Ficção científica</option>
-                </select>
-                <select class="selecionardesk">
-                    <option class="opcaodesk" disabled selected>Faixa etária</option>
-                    <option>Até 10 anos</option>
-                    <option>Até 16 anos</option>
-                    <option>Até 18 anos</option>
-                    <option>Maior de 18 anos</option>
-                </select>
-                <i class="fa-solid fa-magnifying-glass iconsearch"></i>
-                <input type="text" class="pesquisardesk" placeholder="Digite uma série ou filme">
+        </section>
+
+        <section class="container text-center">
+            <div class="row" id="filmes">
+
             </div>
         </section>
-            
-                
-            
 
-        <section class="filmes ">
-            <article class="filme filme1">
-                <img class="imgfilm" src="https://picsum.photos/200/300">
-            </article>
-            <article class="filme filme2">
-                <img class="imgfilm" src="https://picsum.photos/200/300">
-            </article>
-            <article class="filme filme3">
-                <img class="imgfilm" src="https://picsum.photos/200/300">
-            </article>
-            <article class="filme filme4">
-                <img class="imgfilm" src="https://picsum.photos/200/300">
-            </article>
+        <h3 class="mt-5  titlefilter">Séries</h3>
+         <section class="my-5 d-none d-md-flex justify-content-center align-items-center">
+            <div class="d-flex  p-3 gap-3 filtros">
+                <div class="d-flex  rightborder">
+                    <i class="fa-solid fa-ban iconfilter"></i>
+                    <form>
+                        <select class="selectdisable">
+                            <option class="optiondisable" disabled selected>Idade</option>                        
+                        </select>
+                    </form>
+                </div>
+                <div class="d-flex  rightborder">
+                    <i class="fa-solid fa-tv iconfilter"></i>
+                    <form>
+                        <select class="selectdisable">
+                            <option class="optiondisable" disabled selected>Categoria</option>                        
+                        </select>
+                    </form>
+                </div>
+                <div class="d-flex  rightborder">
+                    <i class="fa-solid fa-calendar iconfilter"></i>
+                    <form>
+                        <select class="selectdisable">
+                            <option class="optiondisable" disabled selected>Ano</option>                        
+                        </select>
+                    </form>
+                </div>
+                <div class="d-flex  rightborder">
+                    <i class="fa-solid fa-star iconfilter"></i>
+                    <form>
+                        <select class="selectdisable">
+                            <option class="optiondisable" disabled selected>Rating</option>                        
+                        </select>
+                    </form>
+                </div>
+                <div class="d-flex ">
+                    <i class="fa-solid fa-video iconfilter"></i>
+                    <form>
+                        <select class="selectdisable">
+                            <option class="optiondisable" disabled selected>Streaming</option>                        
+                        </select>
+                    </form>
+                </div>
+            </div>
         </section>
+    
+            <section class="container text-center">
+                <div class="row" id="series">
+    
+                </div>
+            </section>
         
-
-        <section class="d-none d-lg-block  container-fluid">
-            <article class="row m-5">
-
-                <img class="col-sm-6 col-md-3 my-4 col-lg-2 col-xs-6 rounded-5 mt-5"
-                     src="https://picsum.photos/200/300">
-
-                <img class="col-sm-6 col-md-3 my-4 col-lg-2 col-xs-6  rounded-5 mt-5"
-                    src="https://picsum.photos/200/300">
-
-                <img class="col-sm-6 col-md-3 my-4 col-lg-2 col-xs-6  rounded-5 mt-5"
-                    src="https://picsum.photos/200/300">
-
-                <img class="col-sm-6 col-md-3 my-4 col-lg-2 col-xs-6  rounded-5 mt-5"
-                    src="https://picsum.photos/200/300">
-
-                <img class="col-sm-6 col-md-3 my-4 col-lg-2 col-xs-6  rounded-5 mt-5"
-                    src="https://picsum.photos/200/300">
-
-                <img class="col-sm-6 col-md-3 my-4 col-lg-2 col-xs-6  rounded-5 mt-5"
-                    src="https://picsum.photos/200/300">
-
-                <img class="col-sm-6 col-md-3 my-4 col-lg-2 col-xs-6  rounded-5 mt-5"
-                    src="https://picsum.photos/200/300">
-
-                <img class="col-sm-6 col-md-3 my-4 col-lg-2 col-xs-6  rounded-5 mt-5"
-                    src="https://picsum.photos/200/300">
-
-                <img class="col-sm-6 col-md-3 my-4 col-lg-2 col-xs-6  rounded-5 mt-5"
-                    src="https://picsum.photos/200/300">
-
-                <img class="col-sm-6 col-md-3 my-4 col-lg-2 col-xs-6  rounded-5 mt-5"
-                    src="https://picsum.photos/200/300">
-
-                <img class="col-sm-6 col-md-3 my-4 col-lg-2 col-xs-6  rounded-5 mt-5"
-                    src="https://picsum.photos/200/300">
-
-                <img class="col-sm-6 col-md-3 my-4 col-lg-2 col-xs-6  rounded-5 mt-5"
-                    src="https://picsum.photos/200/300">
-
-            </article>
-        </section>
-        <!-- <section class="container mt-3 mb-">
-            <article class="image-scroll">
-
-                <img  src="https://picsum.photos/200/300">
-
-                <img  src="https://picsum.photos/200/300">
-
-                <img  src="https://picsum.photos/200/300">
-
-                <img  src="https://picsum.photos/200/300">
-
-                <img  src="https://picsum.photos/200/300">
-
-                <img  src="https://picsum.photos/200/300">
-
-                <img  src="https://picsum.photos/200/300">
-
-                <img  src="https://picsum.photos/200/300">
-
-                <img  src="https://picsum.photos/200/300">
-
-                <img  src="https://picsum.photos/200/300">
-
-                <img  src="https://picsum.photos/200/300">
-
-            </article>
-
-
-        </section> -->
     </main>
+    <footer style="border-top: 1px solid gray;" class="mx-5 d-flex align-items-center">
+        
+        <div class="my-3" style="max-width: 700px; border-right: 1px solid gray; padding-right: 10px;">        
+            <p style="color: white"><span style="font-size: 40px; border-left: 1px solid blue; padding-left: 10px; color: gray">Sobre mim</span><br>Estudante de Sistemas de Informação e Análise de Dados, dedicado a expandir meu conhecimento em diversas áreas da tecnologia. Busco desenvolver habilidades alinhadas às demandas do mercado, visando competência e qualificação para atuar no mesmo.</p>
+        </div>
+        <div class="d-lg-flex my-3">
+            <div class=" d-flex align-items-center" style="padding-left: 30px;">        
+                <img src="imgs/bruno.jfif" style="border-radius: 10px; width: 100px; height: 100px">
 
+            </div>
+            <div class="pt-5 ps-3" style="color: white">
+                <p>Aluno: Bruno Marinho da Silva</p>
+                <p>Curso: Sistemas de Informação</p>
+                <p>Turma: Manhã</p>
+                <p>Redes sociais: <a href="https://www.linkedin.com/in/bruno-marinho-1052b62aa"><i class="fa-brands fa-linkedin" style="padding-right: 5px;"></i></a><a href="https://www.instagram.com/brunoms.ilva?igsh=bmJocnlnMmlva3Rr"><i class="fa-brands fa-instagram"></i></a href="https://wa.me/5531987852083"></p>
+            </div>
+        </div>
 
-    <footer class="footer d-flex justify-content-center">
-        <p class="linkedin"><i class="fa-brands fa-linkedin"></i> Desenvolvido por <a
-                href="http://www.linkedin.com/in/bruno-marinho-1052b62aa" target="_blank"> Bruno Marinho</a></p>
     </footer>
+
     <script src="script.js"></script>
+    <script>
+        
+        function detalheFilmes(){
+
+            let filmes_grid = document.getElementById('filmes');
+            let series_grid = document.getElementById('series');
+            let html = '';
+            for (let i = 0; i < filmes.length; i++) {
+                let filme = filmes[i];
+
+                html += `
+                    <div  class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+                        <a href="detalhes.html?id=${filme.id}">
+                            <img class="rounded-5 imgfilm my-3"
+                                 src="${filme.imagem}">
+                        </a>
+                    </div>
+                `;
+
+            }
+            
+            filmes_grid.innerHTML = html;
+            series_grid.innerHTML = html;
+        }
+
+    </script>
+
+    
+    
+    <script> 
+
+        let index = 0;
+
+        function mudarFundo() {
+            var item = destaques[index];
+            const bgConteudo = document.getElementById("bgcontent");
+            let bgLoop = document.getElementById("background");
+            let bgfade = document.getElementById('bgfade')
+            
+            bgLoop.style.backgroundImage = `url(${item.imagem})`;
+            bgConteudo.innerHTML = `<section id="fadeconteudo" class="fadecontentbg"><div class="bgdiv" style="position: absolute"><div class="divtitulobg"><p style="color: white; padding: 5px;  border-left: 1px solid blue; " class="titulobg">${item.titulo}</p></div><div class="iconesbg" style="display: flex; gap: 5px"><p style="color: white; background-color: blue; border-radius: 9999px; padding: 2px 10px"><i class="fa-solid fa-tv" style="padding-right: 2px"></i>${item.tipo}</p><p style="color: white; background-color: blue; border-radius: 9999px; padding: 2px 10px"><i class="fa-solid fa-calendar" style="padding-right: 2px"></i>${item.ano}</p><p style="color: yellow; background-color: blue; border-radius: 9999px; padding: 2px 10px"><i class="fa-solid fa-star" style="padding-right: 2px; color: yellow"></i>${item.rating}</p><a href="detalhes.html?id=${item.id}"><button id="btnbg" class="btnmore d-lg-none "style="background-color: blue; border-radius: 10px; border: 1px solid blue; box-shadow: 0 0 10px blue; padding: 10px 20px; color: white; position: relative; bottom: 10px" ><i class="fa-solid fa-play" style="position: relative; right: 5px; top: 0px"></i>More</button></a></div><p class="descricaobg" style="color: white">${item.descricao}</p><a href="detalhes.html?id=${item.id}" style="text-decoration: none"><button id="btnbg" class="btnmore d-none d-lg-flex"style="background-color: blue; border-radius: 10px; border: 1px solid blue; box-shadow: 0 0 10px blue; padding: 10px 20px; color: white" ><i class="fa-solid fa-play" style="position: relative; right: 5px; top: 3px"></i>More</button></a><section>`
+
+            let descricao = document.querySelector('.descricaobg');
+            let fadebg = document.querySelector('.fadecontentbg');
+            descricao.classList.add('boxline')
+            
+            let fadeIn = setTimeout(function(){
+                fadebg.classList.add('fadein');
+                bgfade.classList.add('fadein')
+            },200);
+            let fadeOut = setTimeout(function(){
+                fadebg.classList.add('fadeout');
+                bgfade.classList.add('fadeout')
+            },8000);
+
+            meubg.addEventListener('mouseover', function(){
+
+                clearInterval(fadeOut)
+
+            })
+
+            meubg.addEventListener('mouseleave', function(){
+
+                fadeOut = setTimeout(function(){
+                    fadebg.classList.add('fadeout');
+                    bgfade.classList.add('fadeout');
+                },8000);
+
+            })
+            
+            
+            setTimeout(function(){
+
+                bgLoop.classList.add('zoomout')
+
+            }, 200)
+            
+            index = (index + 1) % destaques.length;
+
+            bgfade.classList.remove("fadein", "fadeout");
+            bgLoop.classList.remove("zoomout")
+
+        }
+
+        let meubg = document.querySelector('#meubg');
+        meubg.addEventListener('mouseover', function(){
+
+            clearInterval(intervalo)
+            document.querySelector('.fadecontentbg').classList.remove('fadeout');
+            document.querySelector('#bgfade').classList.remove('fadeout')
+        
+        })
+        meubg.addEventListener('mouseleave', function(){
+
+            intervalo = setInterval(mudarFundo, 10000)
+
+        })
+        
+        mudarFundo();
+        let intervalo = setInterval(mudarFundo, 10000)
+        
+    </script>  
+    <!-- <script>
+        
+        function meuCarousel(){
+            item_active = destaques[0];
+            carousel = document.getElementById('carouselhp');
+            html=`<div class="carousel-item active">
+                        <img id="imgcarousel" src="${item_active.imagem}" class="d-block container" style="width: 60%;">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>${item_active.titulo}</h5>
+                            <i class="fa-solid fa-star m-1" style="color: yellow"></i><p style="display: inline; color: white;margin-right: 10px">${item_active.rating}</p>
+                            <i class="fa-solid fa-calendar iconfilter"></i><p style="display: inline; color: white;margin-right: 10px">${item_active.ano}</p>
+                        </div>
+                </div>`
+            for(let i = 1; i < destaques.length; i++ )
+            {
+
+                let item = destaques[i];
+                html+=`
+                    <div class="carousel-item">
+                        <img id="imgcarousel" src="${item.imagem}" class="d-block container" style="width: 60%;">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>${item.titulo}</h5>
+                            <i class="fa-solid fa-star m-1" style="color: yellow"></i><p style="display: inline; color: white;margin-right: 10px">${item.rating}</p>
+                            <i class="fa-solid fa-calendar iconfilter"></i><p style="display: inline; color: white;margin-right: 10px">${item.ano}</p>
+                        </div>
+                    </div>
+                        `
+            }
+
+            carousel.innerHTML = html;
+
+        }
+
+        meuCarousel();
+
+    </script>-->
+
+    <script>
+
+        let griddestaques = document.getElementById('griddestaques');
+        html='';
+        for(let i = 0; i < destaques.length; i++)
+        {
+            let rank = i + 1
+            let item_destaque = destaques[i];
+            html+=`
+            <div class="col-lg-4 col-md-12 position-relative mt-5">
+                <a href="detalhes.html?id=${item_destaque.id}"><img class="imgdestaquesgrid" src="${item_destaque.imgdestaque}" style="width: 200px; height: 300px; border-radius: 10px"></a>
+                <p class="ranktext" style="-webkit-text-stroke: 1px blue; font-size: 200px; color: transparent; position: absolute;  right: 250px; z-index: -1; display: inline; top: 90px">${rank}<p>  
+            </div>
+            
+            `
+
+        }   
+
+        griddestaques.innerHTML = html;
+
+
+
+    </script>
+
 </body>
 
 </html>
