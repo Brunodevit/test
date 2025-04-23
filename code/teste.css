@@ -13,16 +13,91 @@ html {
     overflow-x: hidden;
   
   }
-  
+
   .cabcel{
   
     padding: 10px 5px;
     background-color: black;
     background: linear-gradient(to bottom, black 90%, transparent 100%);
-    z-index: 2;
+    z-index: 1;
     max-width: 100%;
     width: 100%;
   
+  }
+
+  @keyframes posicaomenudesce{
+
+    0% {
+
+      margin-top: 0;
+
+    }
+
+    100% {
+
+      margin-top: 20px;
+
+    }
+
+  }
+
+  @keyframes posicaomenusobe{
+
+    0% {
+
+      margin-top: 20px;
+
+    }
+
+    100% {
+
+      margin-top: 0px;
+
+    }
+
+  }
+
+
+
+
+  .cabcelmenu{
+
+    z-index: 1;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    
+  }
+
+  .contentmenucel{
+
+    border-radius: 10px;
+    background-color: black;
+    border: 1px solid gray;
+
+  }
+
+  .menu-anima{
+
+    animation: posicaomenudesce 0.4s ease-in forwards;
+
+  }
+
+  .menu-anima-sobe{
+
+    animation: posicaomenusobe 0.4s ease;
+
+  }
+
+
+
+  .buttonmenucel{
+
+    border-radius: 10px;
+    border: 1px solid #13293d;
+    background-color: #202020;
+    color: gray;
+
   }
   
   .imgcabcel{
@@ -112,7 +187,7 @@ html {
     height: 500px;
     background-size: cover;
     background-position: center;
-    /* transform: scale(1.1); */
+    transform: scale(1.1);
     mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
   }
 
@@ -215,6 +290,9 @@ html {
   
     color: white;
     margin-right: 2%;
+    border: 2px solid gray;
+    padding: 5px;
+    border-radius: 9999px;
   
   
   }
@@ -243,6 +321,86 @@ html {
     
     
   }
+
+  .botoesdinamicos{
+
+    position: relative;
+
+  }
+
+  .botaodinamico{
+
+    width: 100px;
+    height: 7px;
+    border: none;
+    background-color: #282424;
+    border-radius: 9999px;
+
+
+  }
+
+  .divbotoesdinamicos{
+
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+
+  }
+
+
+  .botoesdinamicos::before{
+    content: "";
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: blue;
+    position: absolute;
+    animation: fundoMove 10s ease-in-out forwards;
+    z-index: 0;
+    border-radius: 9999px;
+
+  }
+
+ @keyframes fundoMove{
+
+    0% {
+
+      width: 0%;
+      
+
+    }
+
+    100% {
+
+      width: 100%;;
+
+    }
+
+  }
+
+  /* #botaoteste{
+
+    
+    
+    width: 200px;
+    height: 100px;
+    position: relative;
+    background-color: transparent;
+    
+  }
+
+  #botaoteste::before{
+
+    content: "";
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: blue;
+    position: absolute;
+    animation: fundoMove 1s ease infinite;
+  } */
   
   .btnmore{
   
@@ -338,7 +496,7 @@ html {
 
   .imgdestaquesgrid{
 
-    transition: transform 1s ease-in-out;
+    transition: transform 0.3s ease-in-out;
     cursor: pointer;
 
   }
@@ -346,6 +504,12 @@ html {
   .imgdestaquesgrid:hover{
 
     transform: scale(1.1);
+
+  }
+
+  #meubg{
+
+    overflow: hidden;
 
   }
   
@@ -396,6 +560,12 @@ html {
       
     }
 
+    #textosobre{
+
+      max-width: 500px !important;
+
+    }
+
 
     .ranktext{
 
@@ -408,6 +578,12 @@ html {
       width: 350px;
       
     }
+    .inputsearchdesk{
+
+      width: 250px;
+
+    }
+
   }
 
   @media screen and (min-width: 768px) and (max-width: 991px){
@@ -415,6 +591,12 @@ html {
     .ranktext{
 
       right: 420px !important;
+
+    }
+
+    #textosobre{
+
+      max-width: 400px !important;
 
     }
     
@@ -427,11 +609,37 @@ html {
 
   }
 
+  @media screen and (max-width: 859px){
+
+    #textosobre{
+
+      max-width: 300px !important;
+
+    }
+
+  }
+
   @media screen and (max-width: 767px){
 
     .ranktext{
 
       right: 330px !important;
+      
+
+    }
+
+    #textosobre{
+
+      max-width: 100% !important;
+      border: none !important;
+
+    }
+
+    .morecel{
+
+      display: flex !important;
+      margin-left: -45px;
+      
 
     }
 
@@ -523,6 +731,33 @@ html {
 
   }
 
+  @media screen and (max-width: 459px){ 
+
+    .fontsobre{
+
+      font-size: 12px !important;
+
+    }
+
+    #textosobremim{
+
+      font-size: 15px !important;
+
+    }
+
+
+  }
+
+@media screen and (max-width: 405px){
+
+  #minhafoto{
+
+    width: 100px !important;
+    
+  }
+
+
+}
   @media screen and (max-width: 420px){
 
     .ranktext{
@@ -535,6 +770,23 @@ html {
 
       padding-left: 10px;
       font-size: 50px;
+
+    }
+
+  }
+
+  @media screen and (max-width: 402px){
+
+    .buttonmenucel{
+
+      width: 80px;
+      height: 25px;
+
+    }
+
+    .contentmenucel{
+
+      font-size: 10px;
 
     }
 
@@ -564,6 +816,86 @@ html {
       font-size: 50px;
 
     }
+
+  }
+
+  @media screen and (max-width: 370px){
+
+    .buttonmenucel{
+
+      width: 65px;
+      font-size: 8px;
+
+    }
+
+  }
+  
+  
+  @media screen and (max-width: 360px){
+
+    .descricaobg{
+
+      max-width: 270px !important;
+
+    }
+
+  }
+
+  @media screen and (max-width: 349px){
+
+    .ranktext{
+
+      right: 230px !important;
+
+    }
+
+    
+    .btnmore{
+
+      padding: 10px 10px !important;
+
+    }
+
+
+  }
+
+  @media screen and (max-width: 330px){
+
+    .ranktext{
+
+      right: 215px !important;
+
+    }
+
+    .traileriframe{
+
+      width: 250px;
+
+    }
+
+
+  }
+
+  @media screen and (max-width: 320px){
+
+    #textosobremim{
+
+      font-size: 12px !important;
+
+    }
+
+    .fontsobre{
+
+      font-size: 12px !important;
+
+    }
+
+    .inputsearchcel{
+
+      width: 120px;
+
+    }
+
 
   }
 
