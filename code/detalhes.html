@@ -55,19 +55,19 @@
         
         let params = new URLSearchParams(location.search)
         let id = params.get('id')
-        filme = filmes.find(function (elem) { return elem.id == id}) //procurando dentro do array filmes um item cujo id seja igual ao id vindo da URL.
+        items = items.find(function (objeto) { return objeto.id == id}) //procurando dentro do array filmes um item cujo id seja igual ao id vindo da URL.
         let tela = document.getElementById('tela')
         let backimage = document.getElementById('fundofilme')
-        if(filme)
+        if(items)
         {
 
-            backimage.innerHTML = ` <div class="d-none d-md-block" style ="background-image: url(${filme.banner});
+            backimage.innerHTML = ` <div class="d-none d-md-block" style ="background-image: url(${items.banner});
             background-size: cover; 
             background-position: center; 
             background-repeat: no-repeat;
             height: 700px;
             mask-image: linear-gradient(to bottom, transparent 3%, black 90%, transparent 100%);"></div>
-            <section class="d-md-none"><div class="" style="background-image: url(${filme.banner}); background-size: cover; 
+            <section class="d-md-none"><div class="" style="background-image: url(${items.banner}); background-size: cover; 
             background-position: center; 
             background-repeat: no-repeat;
             height: 400px;
@@ -75,33 +75,33 @@
             "></div>`
             
             let elencoHTML = '';
-            for (let i = 0; i < filme.atores.length; i++) {
-                elencoHTML += `<div><img src="${filme.atores[i].foto}" style="width: 100px; height: 100px; border-radius: 5px; margin-right: 10px"><p style="color: white">${filme.atores[i].nome}</p></div>`;
+            for (let i = 0; i < items.atores.length; i++) {
+                elencoHTML += `<div><img src="${items.atores[i].foto}" style="width: 100px; height: 100px; border-radius: 5px; margin-right: 10px"><p style="color: white; display: -webkit-box; width: 110px; overflow: hidden; -webkit-line-clamp: 1; text-overflow: elipsis; -webkit-box-orient: vertical; font-size: 12px">${items.atores[i].nome}</p></div>`;
             }
 
             let trailer = '';
-            for (let i = 0; i < filme.trailers.length; i++) {
-                trailer += `<div><iframe class="traileriframe" style="margin-right:10px" src="${filme.trailers[i]}" width="300" height="170" frameborder="0" allowfullscreen></iframe></div>`;
+            for (let i = 0; i < items.trailers.length; i++) {
+                trailer += `<div><iframe class="traileriframe" style="margin-right:10px" src="${items.trailers[i]}" width="300" height="170" frameborder="0" allowfullscreen></iframe></div>`;
             }
 
 
 
 
-            tela.innerHTML = `<section class="d-none d-md-flex ms-5 me-5 d-lg-flex" style="margin-top: 200px"><div><img src="${filme.imagem}" style="width: 200px; height: 300px; border-radius: 5px"><i class="fa-solid fa-star m-1" style="color: yellow"></i><p style="display: inline; color: white;margin-right: 10px">${filme.rating}</p><i class="fa-solid fa-clock" style="color: white"></i><p style="display: inline; color: white; margin-left: 5px">${filme.duration}</p></div><div class="ms-3"><h3 style="color: white; border-left: 3px solid black; height: 35px; padding-left: 10px; border-color: #2610f2 ">${filme.titulo}</h3><p style="color: white; ">${filme.descricao}</p><h3 style="color: white; margin-bottom: 10px; border-left: 3px solid black; height: 35px; padding-left: 10px; border-color: #2610f2 ">ELENCO: </h3><div class="d-flex">
+            tela.innerHTML = `<section class="d-none d-md-flex ms-5 me-5 d-lg-flex" style="margin-top: 200px"><div><img src="${items.imagem}" style="width: 200px; height: 300px; border-radius: 5px"><i class="fa-solid fa-star m-1" style="color: yellow"></i><p style="display: inline; color: white;margin-right: 10px">${items.rating}</p><i class="fa-solid fa-clock" style="color: white"></i><p style="display: inline; color: white; margin-left: 5px">${items.duration}</p></div><div class="ms-3"><h3 style="font-size: 30px; color: white; border-left: 3px solid black; padding-left: 10px; border-color: #2610f2; ">${items.titulo}</h3><p style="color: white; ">${items.descricao}</p><h3 style="color: white; margin-bottom: 10px; border-left: 3px solid black; padding-left: 10px; border-color: #2610f2; font-size: 30px; ">TOP CAST: </h3><div class="d-flex" style="gap: 10px">
             ${elencoHTML} </div></div></section><section class="d-none d-md-block" ><div class="ms-5"><div><h3 style="margin-top: 200px; margin-bottom: 20px; color: gray; border-left: 1px solid; padding-left: 10px; border-color: #2610f2">TRAILERS</h3></div><div class="d-flex">${trailer}</div></section>
             
-            <div class="d-none d-sm-flex d-md-none"  style="position: relative; left: 45px; width: 50%; top: 90px"><i class="fa-solid fa-star m-1" style="color: yellow"></i><p style="display: inline; color: white;margin-right: 10px">${filme.rating}</p><i class="fa-solid fa-clock" style="color: white; position: relative; top: 4px"></i><p style="display: inline; color: white; margin-left: 5px">${filme.duration}</p></div><div style="display: flex; margin-top: 75px" class=" d-none d-sm-flex d-md-none ms-5"><img style="width: 150px; height: 250px; border-radius: 5px;" src="${filme.imagem}" alt="<i class="fa-solid fa-star m-1" style="color: yellow"></i><p style="display: inline; color: white;margin-right: 10px"><h3 style="color: white; margin-left: 20px; border-left: 3px solid black; height: 35px; padding-left: 10px; border-color: #2610f2 ">${filme.titulo}</h3><div class="mt-5 position-absolute d-flex flex-wrap" style="margin-left: 170px; color: white;"><p>${filme.descricao}</p></div></div><h3 class="d-none d-sm-flex d-md-none" style="color: white; margin-bottom: 10px; border-left: 3px solid black; height: 35px; padding-left: 10px; border-color: #2610f2;  margin-left:10px; margin-top: 100px">ELENCO:</h3><div class="d-none d-sm-flex d-md-none ms-3">
-            ${elencoHTML}</div><h3 class="d-none d-sm-flex d-md-none" style="margin-left: 10px ;margin-top: 10px; margin-bottom: 20px; color: gray; border-left: 1px solid; padding-left: 10px; border-color: #2610f2">TRAILERS</h3><div class="d-none d-sm-flex d-md-none ms-3">${trailer}</div>
+            <div class="d-none d-sm-flex d-md-none"  style="position: relative; left: 45px; width: 50%; top: 90px"><i class="fa-solid fa-star m-1" style="color: yellow"></i><p style="display: inline; color: white;margin-right: 10px">${items.rating}</p><i class="fa-solid fa-clock" style="color: white; position: relative; top: 4px"></i><p style="display: inline; color: white; margin-left: 5px;">${items.duration}</p></div><div style="display: flex; margin-top: 75px" class=" d-none d-sm-flex d-md-none ms-5"><img style="width: 150px; height: 250px; border-radius: 5px;" src="${items.imagem}" alt="<i class="fa-solid fa-star m-1" style="color: yellow"></i><p style="display: inline; color: white;margin-right: 10px"><h3 style="color: white; margin-left: 10px; border-left: 3px solid black; height: 30px; padding-left: 10px; border-color: #2610f2; font-size: 17px">${items.titulo}</h3><div class="mt-5 position-absolute d-flex flex-wrap" style="margin-left: 170px; color: white;"><p>${items.descricao}</p></div></div><h3 class="d-none d-sm-flex d-md-none" style="color: white; margin-bottom: 10px; border-left: 3px solid black;  padding-left: 10px; border-color: #2610f2;  margin-left:10px; margin-top: 100px; font-size: 17px">TOP CAST:</h3><div class="d-none d-sm-flex d-md-none ms-3">
+            ${elencoHTML}</div><h3 class="d-none d-sm-flex d-md-none" style="margin-left: 10px ;margin-top: 10px; margin-bottom: 20px; color: gray; border-left: 1px solid; padding-left: 10px; border-color: #2610f2; font-size: 17px">TRAILERS</h3><div class="d-none d-sm-flex d-md-none ms-3">${trailer}</div>
             
-            <div class="d-xs-block d-sm-none"  style="position: relative; left: 5px; width: 50%; top: 100px"><i class="fa-solid fa-star m-1" style="color: yellow"></i><p style="display: inline; color: white;margin-right: 10px">${filme.rating}</p><i class="fa-solid fa-clock" style="color: white; position: relative; top: 0px"></i><p style="display: inline; color: white; margin-left: 5px">${filme.duration}</p></div><section class="d-sm-none ms-2 d-flex me-1" style="margin: 100px"><div style="" class=""><img style="width: 120px; height: 170px; border-radius: 5px;" src="${filme.imagem}"></div><div clas="" style="margin-left: 10px"><p style="font-size: 15px; margin-left: 5px; color: white; font-weight: 700;">${filme.titulo}</p><p style="color: white; font-size: 10px">${filme.descricao}</p></div></section><h3 class="d-sm-none" style="color: white; margin-bottom: 10px; border-left: 3px solid black; height: 35px; padding-left: 10px; border-color: #2610f2;  margin-left:10px; margin-top: 150px">ELENCO:</h3><div class="d-sm-none d-flex ms-3">
-            ${elencoHTML}</div><h3 class="d-sm-none" style="margin-left: 10px ;margin-top: 10px; margin-bottom: 20px; color: gray; border-left: 1px solid; padding-left: 10px; border-color: #2610f2">TRAILERS</h3><div class="d-sm-none ms-3">${trailer}</div>
+            <div class="d-xs-block d-sm-none"  style="position: relative; left: 5px; width: 50%; top: 100px"><i class="fa-solid fa-star m-1" style="color: yellow"></i><p style="display: inline; color: white;margin-right: 10px; font-size: 12px">${items.rating}</p><i class="fa-solid fa-clock" style="color: white; position: relative; top: 0px"></i><p style="display: inline; color: white; margin-left: 5px; font-size: 12px">${items.duration}</p></div><section class="d-sm-none ms-2 d-flex me-1" style="margin: 100px"><div style="" class=""><img style="width: 120px; height: 170px; border-radius: 5px;" src="${items.imagem}"></div><div clas="" style="margin-left: 10px"><p style="font-size: 12px; padding-left: 5px; color: white; font-weight: 700; border-left: 1px solid blue ; ">${items.titulo}</p><p style="color: white; font-size: 10px">${items.descricao}</p></div></section><h3 class="d-sm-none" style="color: white; margin-bottom: 10px; border-left: 3px solid black; font-size: 12px; padding-left: 10px; border-color: #2610f2;  margin-left:10px; margin-top: 150px">TOP CAST:</h3><div class="d-sm-none d-flex ms-3">
+            ${elencoHTML}</div><h3 class="d-sm-none" style="margin-left: 10px ;margin-top: 10px; margin-bottom: 20px; color: gray; border-left: 1px solid; padding-left: 10px; border-color: #2610f2; font-size: 12px">TRAILERS</h3><div class="d-sm-none ms-3">${trailer}</div>
 
             `
 
             
         }
         else{
-            backimage.innerHTML = `<div class="d-flex justify-content-center align-items-center" style=" position: relative; top: 50%""><h3 style="color: white;"">Sem resultados :(</h3></div>`
+            backimage.innerHTML = `<div class="" style=" height: 100vh"><div class="d-flex justify-content-center align-items-center"><h3 style="color: white; position: relative; top: 100px"">Sem resultados :(</h3></div><div class="d-flex justify-content-center align-items-center"><img src="imgs/popcornsemfundo.png"></div></div>`
         }
     </script>
 </body>

@@ -18,7 +18,7 @@ html {
   
     padding: 10px 5px;
     background-color: black;
-    background: linear-gradient(to bottom, black 90%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
     z-index: 1;
     max-width: 100%;
     width: 100%;
@@ -140,7 +140,6 @@ html {
   #bgfade{
   
     opacity: 0;
-    transition: transform 10s ease-in-out;
     
   }
 
@@ -322,7 +321,7 @@ html {
     
   }
 
-  .botoesdinamicos{
+  .botoesdinamicosrun{
 
     position: relative;
 
@@ -336,7 +335,6 @@ html {
     background-color: #282424;
     border-radius: 9999px;
 
-
   }
 
   .divbotoesdinamicos{
@@ -344,21 +342,29 @@ html {
     display: flex;
     gap: 20px;
     justify-content: center;
+    margin: 0 !important;
 
   }
 
 
-  .botoesdinamicos::before{
+  .botoesdinamicosrun::before{
+    
     content: "";
-    width: 0%;
     height: 100%;
     top: 0;
     left: 0;
     background-color: blue;
     position: absolute;
     animation: fundoMove 10s ease-in-out forwards;
+    animation-play-state: running;
     z-index: 0;
     border-radius: 9999px;
+
+  }
+
+  .paused::before{
+    
+    animation-play-state: paused;
 
   }
 
@@ -367,13 +373,12 @@ html {
     0% {
 
       width: 0%;
-      
 
     }
 
     100% {
 
-      width: 100%;;
+      width: 100%;
 
     }
 
@@ -458,6 +463,7 @@ html {
   .principal{
   
     margin: 0;
+    margin-bottom: 50px;
     
   }
   
@@ -513,14 +519,24 @@ html {
 
   }
   
-  
-  
   @media screen and (min-width: 1200px){
   
     #background{
   
       height: 100vh;
       
+    }
+
+    #indicadores{
+
+      bottom: 550px !important;
+
+    }
+
+    #bgcontent{
+
+      bottom: 350px !important;
+
     }
   
   
@@ -552,30 +568,60 @@ html {
     
   }
   
-  @media screen and (max-width: 1199px){
+  @media screen and (min-width: 992px) and (max-width: 1199px){
     #bgcontent{
   
       padding-left: 10px !important;
-      bottom: 200px !important;
+      bottom: 250px !important;
       
     }
 
-    #textosobre{
+    .titulodestaquegrid{
 
-      max-width: 500px !important;
+      left: 45px !important;
+      bottom: -10px;
 
     }
 
+    .tituloprincipal{
 
-    .ranktext{
+      left: 10px !important;
 
-      right: 220px !important;
+    }
+    
+    .ratingdestaques{
+
+      right: 190px !important;
+
+    }
+
+    .ratingprincipal{
+
+      left: 20px !important;
+
+    }
+
+    .durationprincipal{
+
+      left: 70px !important;
+
+    }
+
+    #toptodaytext{
+
+      padding-left: 20px !important;
+
+    }
+
+    #indicadores{
+
+      bottom: 450px !important;
 
     }
   
     .descricaobg{
   
-      width: 350px;
+      width: 800px;
       
     }
     .inputsearchdesk{
@@ -584,56 +630,90 @@ html {
 
     }
 
+    .ranktext{
+
+      font-size: 130px !important;
+      top: 140px !important;
+
+    }
+
+    
+
+
+
   }
 
   @media screen and (min-width: 768px) and (max-width: 991px){
 
-    .ranktext{
 
-      right: 420px !important;
+    #indicadores{
+
+      bottom: 450px !important;
 
     }
 
-    #textosobre{
+    .tituloprincipal{
 
-      max-width: 400px !important;
+      left: 15px !important;
+
+    }
+
+    .titulodestaquegrid{
+
+      left: 250px !important;
+
+    }
+
+    .ratingdestaques{
+
+      right: 390px !important;
+
+    }
+
+    .ratingprincipal{
+
+      left: 15px !important;
+
+    }
+
+    .durationprincipal{
+
+      left: 70px !important;
+
+    }
+
+    .ranktext{
+
+      left: 0px !important;
+
+    }
+
+
+    #bgcontent{
+
+      bottom: 200px !important;
+
+
+    }
+
+    .descricaobg{
+
+      width: 700px;
+
+    }
+
+    #toptodaytext{
+
+      padding-left: 20px;
 
     }
     
-    #toptodaytext{
-
-      padding-left: 50px;
-      font-size: 80px;
-
-    }
 
   }
 
-  @media screen and (max-width: 859px){
-
-    #textosobre{
-
-      max-width: 300px !important;
-
-    }
-
-  }
 
   @media screen and (max-width: 767px){
 
-    .ranktext{
-
-      right: 330px !important;
-      
-
-    }
-
-    #textosobre{
-
-      max-width: 100% !important;
-      border: none !important;
-
-    }
 
     .morecel{
 
@@ -643,45 +723,58 @@ html {
 
     }
 
-    #toptodaytext{
-
-      padding-left: 50px;
-      font-size: 80px;
-
-    }
-
-  }
-
-
-    @media screen and (min-width: 768px) and (max-width: 991px){
-
-    .ranktext{
-
-      right: 420px !important;
-
-    }
-    
-    #toptodaytext{
-
-      padding-left: 50px;
-      font-size: 80px;
-
-    }
-
   }
 
   @media screen and (min-width: 576px) and (max-width: 767px){
 
+    #indicadores{
+
+      bottom: 450px !important;
+
+    }
+
+    .titulodestaquegrid{
+
+      left: 160px !important;
+
+    }
+
+    .ratingdestaques{
+
+      right: 300px !important;
+
+    }
+
     .ranktext{
 
-      right: 330px !important;
+      left: 0px !important;
+      
+
+    }
+
+    
+    .traileriframe{
+
+      width: 250px !important;
+
+    }
+
+    .descricaobg{
+
+      width: 500px;
+
+    }
+
+    #bgcontent{
+
+      bottom: 200px !important;
 
     }
 
     #toptodaytext{
 
-      padding-left: 50px;
-      font-size: 80px;
+      padding-left: 25px !important;
+      font-size: 60px;
 
     }
 
@@ -689,16 +782,95 @@ html {
 
   @media screen and (max-width: 575px){
 
+
+    .botaodinamico{
+
+      width: 60px !important;
+
+    }
+
+
+    .ratingdestaques{
+
+      left: 60px !important;
+
+    }
+
+    .ratingprincipal{
+
+      left: 60px !important;
+
+    }
+
+    .durationprincipal{
+
+      left: 100px !important;
+
+    }
+
+    .descricaobg{
+
+      width: 320px;
+
+    }
+
+    #bgcontent{
+
+      bottom: 250px !important;
+      padding-left: 10px !important;
+
+    }
+
     .ranktext{
 
-      right: 350px !important;
+      left: 0px !important;
+      font-size: 160px !important;
+      
 
     }
 
     #toptodaytext{
 
-      padding-left: 50px;
-      font-size: 50px;
+      font-size: 40px !important;
+      padding-left: 20px;
+
+    }
+
+    .divbotoesdinamicos{
+
+      gap: 10px;
+
+
+    }
+
+    #indicadores{
+
+      bottom: 450px !important;
+
+    }
+
+    .btnmore{
+
+      top: 110px;
+      right: 225px;
+
+    }
+
+    .titulodestaquegrid{
+
+      display: none !important;
+
+    }
+
+    .tituloprincipal{
+
+      display: none !important;
+
+    }
+
+    .tituloxs{
+
+      display: block !important;
 
     }
 
@@ -713,67 +885,6 @@ html {
     }
   }
 
-  @media screen and (max-width: 475px){
-
-    .ranktext{
-
-      right: 300px !important;
-
-
-    }
-
-    #toptodaytext{
-
-      padding-left: 15px;
-      font-size: 50px;
-
-    }
-
-  }
-
-  @media screen and (max-width: 459px){ 
-
-    .fontsobre{
-
-      font-size: 12px !important;
-
-    }
-
-    #textosobremim{
-
-      font-size: 15px !important;
-
-    }
-
-
-  }
-
-@media screen and (max-width: 405px){
-
-  #minhafoto{
-
-    width: 100px !important;
-    
-  }
-
-
-}
-  @media screen and (max-width: 420px){
-
-    .ranktext{
-
-      right: 270px !important;
-
-    }
-
-    #toptodaytext{
-
-      padding-left: 10px;
-      font-size: 50px;
-
-    }
-
-  }
 
   @media screen and (max-width: 402px){
 
@@ -804,18 +915,6 @@ html {
 
   @media screen and (max-width: 380px){
 
-    .ranktext{
-
-      right: 240px !important;
-
-    }
-
-    #toptodaytext{
-
-      padding-left: 10px;
-      font-size: 50px;
-
-    }
 
   }
 
@@ -839,33 +938,15 @@ html {
 
     }
 
-  }
+    #indicadores{
 
-  @media screen and (max-width: 349px){
-
-    .ranktext{
-
-      right: 230px !important;
+      left: 10px;
 
     }
-
-    
-    .btnmore{
-
-      padding: 10px 10px !important;
-
-    }
-
 
   }
 
   @media screen and (max-width: 330px){
-
-    .ranktext{
-
-      right: 215px !important;
-
-    }
 
     .traileriframe{
 
@@ -877,18 +958,6 @@ html {
   }
 
   @media screen and (max-width: 320px){
-
-    #textosobremim{
-
-      font-size: 12px !important;
-
-    }
-
-    .fontsobre{
-
-      font-size: 12px !important;
-
-    }
 
     .inputsearchcel{
 
