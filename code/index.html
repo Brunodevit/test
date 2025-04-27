@@ -104,207 +104,57 @@
 
     <main class="principal">
         
-        <div style="margin-top: 100px;" class="destaquespai">
-
-            <p id="toptodaytext">TOP 3 TODAY</p>
-
-            <section id="toptoday">
-                
-                <div class="container text-center">
-                    <div class="row" id="griddestaques">
 
 
-
-                    </div>
-                </div>
-            </section>
-
-        </div>
-
-        <h3 class=" titlefilter" style="margin-top: 150px">Filmes</h3>
-        <section class="my-5 d-none d-md-flex justify-content-center align-items-center">
-            <div class="d-flex p-3 gap-3 filtros">
-                <div class="d-flex rightborder">
-                    <i class="fa-solid fa-ban iconfilter"></i>
-                    <form>
-                        <select class="selectdisable">
-                            <option class="optiondisable" disabled selected>Idade</option>                        
-                        </select>
-                    </form>
-                </div>
-                <div class="d-flex rightborder">
-                    <i class="fa-solid fa-tv iconfilter"></i>
-                    <form>
-                        <select class="selectdisable">
-                            <option class="optiondisable" disabled selected>Categoria</option>                        
-                        </select>
-                    </form>
-                </div>
-                <div class="d-flex rightborder">
-                    <i class="fa-solid fa-calendar iconfilter"></i>
-                    <form>
-                        <select class="selectdisable">
-                            <option class="optiondisable" disabled selected>Ano</option>                        
-                        </select>
-                    </form>
-                </div>
-                <div class="d-flex rightborder">
-                    <i class="fa-solid fa-star iconfilter"></i>
-                    <form>
-                        <select class="selectdisable">
-                            <option class="optiondisable" disabled selected>Rating</option>                        
-                        </select>
-                    </form>
-                </div>
-                <div class="d-flex">
-                    <i class="fa-solid fa-video iconfilter"></i>
-                    <form>
-                        <select class="selectdisable">
-                            <option class="optiondisable" disabled selected>Streaming</option>                        
-                        </select>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <section class="container text-center">
-            <div class="row" id="filmes">
+        <section class="position-relative" id="alinedfade">
+            <div id="conteudoalined" class="d-flex gap-3 mx-5" style="overflow-x: auto; scrollbar-width: none; scroll-behavior: smooth;">
 
             </div>
-        </section>
-
-        <h3 class="mt-5  titlefilter">Séries</h3>
-         <section class="my-5 d-none d-md-flex justify-content-center align-items-center">
-            <div class="d-flex  p-3 gap-3 filtros">
-                <div class="d-flex  rightborder">
-                    <i class="fa-solid fa-ban iconfilter"></i>
-                    <form>
-                        <select class="selectdisable">
-                            <option class="optiondisable" disabled selected>Idade</option>                        
-                        </select>
-                    </form>
-                </div>
-                <div class="d-flex  rightborder">
-                    <i class="fa-solid fa-tv iconfilter"></i>
-                    <form>
-                        <select class="selectdisable">
-                            <option class="optiondisable" disabled selected>Categoria</option>                        
-                        </select>
-                    </form>
-                </div>
-                <div class="d-flex  rightborder">
-                    <i class="fa-solid fa-calendar iconfilter"></i>
-                    <form>
-                        <select class="selectdisable">
-                            <option class="optiondisable" disabled selected>Ano</option>                        
-                        </select>
-                    </form>
-                </div>
-                <div class="d-flex  rightborder">
-                    <i class="fa-solid fa-star iconfilter"></i>
-                    <form>
-                        <select class="selectdisable">
-                            <option class="optiondisable" disabled selected>Rating</option>                        
-                        </select>
-                    </form>
-                </div>
-                <div class="d-flex ">
-                    <i class="fa-solid fa-video iconfilter"></i>
-                    <form>
-                        <select class="selectdisable">
-                            <option class="optiondisable" disabled selected>Streaming</option>                        
-                        </select>
-                    </form>
-                </div>
+            <div style="width: 100%;">
+                <button id="buttonscrollprev" style="position: absolute; left: 0"></button>
+                <button id="buttonscrollnext" style="position: absolute; right: 200px; bottom: 50%; "></button>                
             </div>
         </section>
-    
-            <section class="container text-center">
-                <div class="row" id="series">
-    
-                </div>
-            </section>
+        <script>
+
+            let conteudoalined = document.getElementById('conteudoalined');
+            let buttonscrollprev = document.getElementById('buttonscrollprev');
+            let buttonscrollnext= document.getElementById('buttonscrollnext');
+            let html = '';
+
+            for( let i = 0; i < items.length; i++)
+            {
+     
+                let item = items[i];
+                html+=`
+                <article class="position-relative">
+                    <img src="${item.imagem}" class="imgdestaque" style="width: 170px; height: 250px">
+                    <p class="conteudobox">${item.titulo}</p>
+                </article>
+                `
+
+            }
+
+            conteudoalined.innerHTML = html;
+
+            buttonscrollprev.addEventListener('click', function(){
+
+                conteudoalined.scrollBy({left: -300, behavior: "smooth"})
+
+            })
+            buttonscrollnext.addEventListener('click', function(){
+
+                conteudoalined.scrollBy({left: 300, behavior: "smooth"})
+
+            })
+
+
+
+        </script>
+
+       
         
     </main>
-
-    <footer class=" mx-5 d-none d-xl-flex  position-relative" style="border-top: 1px solid gray;">
-
-        <div class="d-flex my-2">
-            <div style="padding-right: 30px;">
-                <h2 style="padding-top: 10px; color: gray"><span style="font-weight: 900;">sobre</span></h2>
-                <p style="width: 700px; max-width: 100%; color: gray">Estudante de Sistemas de Informação e Análise de Dados, dedicado a expandir meu conhecimento em diversas áreas da tecnologia. Busco desenvolver habilidades alinhadas às demandas do mercado, visando competência e qualificação para atuar no mesmo.</p>
-            </div>
-            <div class="d-flex align-items-center position-absolute" style="color: gray; margin-top: 30px; right: 10px;">
-                <img src="imgs/bruno.jfif" style="border-radius: 10px; width: 80px; height: 80px;">
-                <div class="mt-3 ms-2">
-                    <p style="font-size: 13px;"><span style="font-weight: 900;">Aluno</span>: Bruno Marinho<br><span style="font-weight: 900;">Curso</span>: Sistemas de Informação<br><span style="font-weight: 900;">Turma</span>: Manhã</p>
-                </div>
-                <h3 style="position: absolute; bottom: 80px; right: 165px;"><span style="font-weight: 900;">Autoria</span></h3>
-                <h5 style="position: absolute; top: 85px; left: 0px;"><span style="font-weight: 900;">Redes sociais: </span><a href="https://www.linkedin.com/in/bruno-marinho-1052b62aa"><i class="fa-brands fa-linkedin" style="padding-right: 5px;"></i></a><a href="https://www.instagram.com/brunoms.ilva?igsh=bmJocnlnMmlva3Rr"><i class="fa-brands fa-instagram"></i></a href="https://wa.me/5531987852083">  </h5>
-            </div>
-        </div>
-    </footer>
-
-    <footer class=" mx-5 d-none d-lg-flex d-xl-none position-relative" style="border-top: 1px solid gray;">
-
-        <div class="d-flex my-2 align-items-center">
-            <div style="padding-right: 30px;">
-                <h2 style="padding-top: 10px; color: gray"><span style="font-weight: 900;">sobre</span></h2>
-                <p style="width: 590px; max-width: 100%; color: gray">Estudante de Sistemas de Informação e Análise de Dados, dedicado a expandir meu conhecimento em diversas áreas da tecnologia. Busco desenvolver habilidades alinhadas às demandas do mercado, visando competência e qualificação para atuar no mesmo.</p>
-            </div>
-            <div class="d-flex align-items-center position-absolute" style="color: gray; margin-top: 30px; right: 30px;">
-                <img src="imgs/bruno.jfif" style="border-radius: 10px; width: 80px; height: 80px;">
-                <div class="mt-3 ms-2">
-                    <p style="font-size: 13px;"><span style="font-weight: 900;">Aluno</span>: Bruno Marinho<br><span style="font-weight: 900;">Curso</span>: Sistemas de Informação<br><span style="font-weight: 900;">Turma</span>: Manhã</p>
-                </div>
-                <h3 style="position: absolute; bottom: 80px"><span style="font-weight: 900;">Autoria</span></h3>
-                <h5 style="position: absolute; top: 85px"><span style="font-weight: 900;">Redes sociais: </span><a href="https://www.linkedin.com/in/bruno-marinho-1052b62aa"><i class="fa-brands fa-linkedin" style="padding-right: 5px;"></i></a><a href="https://www.instagram.com/brunoms.ilva?igsh=bmJocnlnMmlva3Rr"><i class="fa-brands fa-instagram"></i></a href="https://wa.me/5531987852083">  </h5>
-            </div>
-        </div>
-
-    </footer>
-
-    <footer class=" mx-5 d-none d-md-flex d-lg-none position-relative" style="border-top: 1px solid gray;">
-
-        <div class="d-flex my-2 align-items-center">
-            <div style="padding-right: 30px;">
-                <h2 style="padding-top: 10px; color: gray"><span style="font-weight: 900;">sobre</span></h2>
-                <p style="width: 450px; max-width: 100%; color: gray">Estudante de Sistemas de Informação e Análise de Dados, dedicado a expandir meu conhecimento em diversas áreas da tecnologia. Busco desenvolver habilidades alinhadas às demandas do mercado, visando competência e qualificação para atuar no mesmo.</p>
-            </div>
-            <div class="d-flex align-items-center position-absolute" style="color: gray; margin-top: 30px; right: 1px;">
-                <img src="imgs/bruno.jfif" style="border-radius: 10px; width: 80px; height: 80px;">
-                <div class="mt-3 ms-2">
-                    <p style="font-size: 12px;"><span style="font-weight: 900;">Aluno</span>: Bruno Marinho<br><span style="font-weight: 900;">Curso</span>: SI<br><span style="font-weight: 900;">Turma</span>: Manhã</p>
-                </div>
-                <h3 style="position: absolute; bottom: 80px"><span style="font-weight: 900;">Autoria</span></h3>
-                <h5 style="position: absolute; top: 85px"><span style="font-weight: 900;">Redes sociais: </span><a href="https://www.linkedin.com/in/bruno-marinho-1052b62aa"><i class="fa-brands fa-linkedin" style="padding-right: 5px;"></i></a><a href="https://www.instagram.com/brunoms.ilva?igsh=bmJocnlnMmlva3Rr"><i class="fa-brands fa-instagram"></i></a href="https://wa.me/5531987852083">  </h5>
-            </div>
-        </div>
-
-    </footer>
-
-    <footer class=" mx-2 d-md-none position-relative" style="border-top: 1px solid gray;">
-
-        <div class="d-block my-2 align-items-center">
-            <div style="padding-right: 30px;">
-                <h2 style="padding-top: 10px; color: gray"><span style="font-weight: 900;">sobre</span></h2>
-                <p style="width: 100%; color: gray; font-size: 12px;">Estudante de Sistemas de Informação e Análise de Dados, dedicado a expandir meu conhecimento em diversas áreas da tecnologia. Busco desenvolver habilidades alinhadas às demandas do mercado, visando competência e qualificação para atuar no mesmo.</p>
-            </div>
-            <h3 style="color: gray;"><span style="font-weight: 900;">Autoria</span></h3>
-            <div class="d-flex align-items-center " style="color: gray; right: 1px;">
-                <img src="imgs/bruno.jfif" style="border-radius: 10px; width: 80px; height: 80px;">
-                <div class="mt-3 ms-2">
-                    <p style="font-size: 12px;"><span style="font-weight: 900;">Aluno</span>: Bruno Marinho<br><span style="font-weight: 900;">Curso</span>: SI<br><span style="font-weight: 900;">Turma</span>: Manhã</p>
-                </div>
-               
-            </div>
-            <h5 style="color: gray;"><span style="font-weight: 900;">Redes sociais: </span><a href="https://www.linkedin.com/in/bruno-marinho-1052b62aa"><i class="fa-brands fa-linkedin" style="padding-right: 5px;"></i></a><a href="https://www.instagram.com/brunoms.ilva?igsh=bmJocnlnMmlva3Rr"><i class="fa-brands fa-instagram"></i></a href="https://wa.me/5531987852083">  </h5>
-        </div>
-
-    </footer>
-
-
-    
 
     <script src="script.js"></script>
     <script>
@@ -585,32 +435,7 @@
 
     <script>
 
-        let griddestaques = document.getElementById('griddestaques');
-        html='';
-        for(let i = 0; i < destaques.length; i++)
-        {
-            let rank = i + 1
-            let item_destaque = destaques[i];
-            html+=`
-            
-            <div class="col-lg-4 col-md-12 mt-5">
-                
-                <div class="position-relative mb-5 container" style=""width: 100%>
-                    <a href="detalhes.html?id=${item_destaque.id}"><img class="imgdestaquesgrid" src="${item_destaque.imgdestaque}" style="width: 200px; height: 300px; border-radius: 10px"></a>
-                    <p class="ranktext" style="-webkit-text-stroke: 1px blue; font-size: 200px; color: transparent; position: absolute;  right: 250px; z-index: -1; display: inline; top: 90px">${rank}</p> 
-                    <p class="position-absolute titulodestaquegrid" style="color: white; left: 85px; bottom: -50px;display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; text-overflow: elipsis; overflow: hidden; max-width: 200px">${item_destaque.titulo}</p>
-                    <i class="fa-solid fa-star me-3 position-absolute ratingdestaques" style="color: yellow; right: 215px; top: -32px; font-size: 14px">${item_destaque.rating}</i>
-                    <p class="position-relative tituloxs mt-2" style="font-size: 12px; ;display: none; color: white">${item_destaque.titulo}</p>
-  
-                </div>
-                
-            </div>
-            
-            `
 
-        }   
-
-        griddestaques.innerHTML = html;
 
 
 
